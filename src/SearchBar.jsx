@@ -13,6 +13,7 @@ function SearchBar() {
   const [accessToken, setAccessToken] = useState('');
   const [returnedTracks, setReturnedTracks] = useState([]);
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [playlistName, setPlaylistName] = useState('My Jammming Playlist');
 
   useEffect(() => {
     const authParameters = {
@@ -69,6 +70,10 @@ function SearchBar() {
     setPlaylistTracks(prev => prev.filter(t => t.id !== track.id));
   };
 
+  const handleRenamePlaylist = (newName) => {
+    setPlaylistName(newName);
+  };
+
   return (
     <>
     <div className="header">
@@ -106,7 +111,12 @@ function SearchBar() {
         onToggleTrack={handleToggleTrack}
         playlistTracks={playlistTracks}  // <- pass current playlist so Results can derive isAdded
       />
-      <YourPlaylist tracks={playlistTracks} onRemove={handleRemoveTrack} />
+      <YourPlaylist
+        tracks={playlistTracks}
+        onRemove={handleRemoveTrack}
+        playlistName={playlistName}
+        onRename={handleRenamePlaylist}
+      />
       {/* playlistTracks now contains the added tracks */}
     </>
   );
