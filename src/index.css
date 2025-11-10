@@ -1,68 +1,31 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body, html {
+    font-family: Outfit, Arial, Helvetica, sans-serif;
+    background-color: #021E73;
+    color: white;
+    text-align: center;
+    font-family: Outfit, Arial, Helvetica, sans-serif;    
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* Color Theme Swatches in Hex */
+.PALETTE-mini-07:-Monotone-1-hex { color: #040FD9; }
+.PALETTE-mini-07:-Monotone-2-hex { color: #040DBF; }
+.PALETTE-mini-07:-Monotone-3-hex { color: #021E73; }
+.PALETTE-mini-07:-Monotone-4-hex { color: #0339A6; }
+.PALETTE-mini-07:-Monotone-5-hex { color: #4E8AD9; }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* Color Theme Swatches in RGBA */
+.PALETTE-mini-07:-Monotone-1-rgba { color: rgba(4, 14, 216, 1); }
+.PALETTE-mini-07:-Monotone-2-rgba { color: rgba(3, 13, 191, 1); }
+.PALETTE-mini-07:-Monotone-3-rgba { color: rgba(2, 30, 114, 1); }
+.PALETTE-mini-07:-Monotone-4-rgba { color: rgba(3, 57, 165, 1); }
+.PALETTE-mini-07:-Monotone-5-rgba { color: rgba(78, 138, 216, 1); }
+
+/* Color Theme Swatches in HSLA */
+.PALETTE-mini-07:-Monotone-1-hsla { color: hsla(236, 96, 43, 1); }
+.PALETTE-mini-07:-Monotone-2-hsla { color: hsla(236, 96, 38, 1); }
+.PALETTE-mini-07:-Monotone-3-hsla { color: hsla(225, 96, 22, 1); }
+.PALETTE-mini-07:-Monotone-4-hsla { color: hsla(219, 96, 33, 1); }
+.PALETTE-mini-07:-Monotone-5-hsla { color: hsla(213, 64, 57, 1); }
