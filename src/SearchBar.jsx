@@ -6,7 +6,7 @@ import YourPlaylist from './YourPlaylist';
 import Banner from './Banner';
 import { startAuth, handleRedirectCallback, getStoredToken } from './Auth'; // PKCE helpers
 
-const CLIENT_ID = "0daed1230ede4c0c910f75e06e18e62e";
+const CLIENT_ID = "";
 
 export default function SearchBar() {
   const [inputValue, setInputValue] = useState('');
