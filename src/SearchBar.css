@@ -86,3 +86,7 @@ body .content, #results, .yourPlaylist {
     position: relative;
     top: 10rem;
 }
+
+#authTop {
+    margin-left: 2rem;
+}
