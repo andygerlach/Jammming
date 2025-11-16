@@ -1,15 +1,17 @@
 import React from "react";
-import Tracklist from "./Tracklist"
-import styles from "./SearchResults.module.css"
+import Tracklist from "./Tracklist";
+import styles from "./SearchResults.module.css";
 
 function SearchResults(props) {
     return (
         <div className={styles.SearchResults}>
-            {/* <!-- Add a Tracklist component --> */}
+            <h2 className={styles.Title}>Results</h2>
+
             <Tracklist
                 userSearchResults={props.userSearchResults}
-                isRemoval={false}
                 onAdd={props.onAdd}
+                onRemove={props.onRemove}
+                isRemoval={false}
             />
         </div>
     );

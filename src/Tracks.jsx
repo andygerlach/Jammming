@@ -1,38 +1,36 @@
 import React from "react";
+import styles from "./Track.module.css";
 
-function Track(props) {  //function
-    function renderAction() {  //helper function to determine which button should appear + or -
-        if (props.isRemoval) {  //props.isRemoval is a boolean prop passed down from parent
-            return (
-                <button onClick={passTrackToRemove}>-</button>
-            );
+function Track(props) {
+    function handleClick() {
+        if (props.isRemoval) {
+            props.onRemove(props.track);
         } else {
-            return (
-                <button onClick={passTrack}>+</button>
-            );
+            props.onAdd(props.track);
         }
     }
 
-    function passTrack() {  //bridge function to let the Track component communicate with its parent component
-        props.onAdd(props.track);
-    }
-
-    function passTrackToRemove() {  //bridge function to let the Track component communicate with its parent component
-        props.onRemove(props.track);
-    }
-
     return (
-        <div >
-            <div>
-                {/* <h3><!-- track name will go here --></h3> */}
-                <h3>{props.track.name}</h3>
-                {/* <p><!-- track artist will go here--> | <!-- track album will go here --></p> */}
-                <p>
+        <div
+            className={styles.Track}
+            onClick={handleClick}
+        >
+            {/* Album image */}
+            {props.track.albumImage && (
+                <img
+                    className={styles.TrackImage}
+                    src={props.track.albumImage}
+                    alt={`${props.track.album} cover`}
+                />
+            )}
+
+            {/* Track info */}
+            <div className={styles.TrackInfo}>
+                <h3 className={styles.TrackName}>{props.track.name}</h3>
+                <p className={styles.TrackMeta}>
                     {props.track.artist} | {props.track.album}
                 </p>
             </div>
-            {/* <button class="Track-action"><!-- + or - will go here --></button> */}
-            {renderAction()}
         </div>
     );
 }

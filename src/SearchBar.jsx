@@ -1,39 +1,42 @@
 import React, { useState } from "react";
+import styles from "./SearchBar.module.css"; // <-- make sure this exists
 
+function SearchBar(props) {
+    const [term, setTerm] = useState("");
 
-function SearchBar(props) { //props is an object containing data passed in from the parent component
-
-    const [Term, setTerm] = useState(""); //state hook to re-render when information changes
-
-    /* helper function for SearchBar()
-    lifting state up. onSearch is a callback funtion passed down from the parent via props. This function acts as a messenger between the child and parent. it takes the current value of searchTerm from useState and sends it back to the parent by calling the parents onSearch function
-        |
-        |
-        v
-    */
-
-    function passTerm() {
-        props.onSearch(Term);
+    function submitSearch() {
+        if (term.trim() === "") return;
+        props.onSearch(term);
+        setTerm("");
     }
-
-
-    /* handles input change event from search. this function is called automatically when the user types. The parameter { target } uses object destructuring. setTerm uses the hook to update value with the useState, keeping the value updated with what the user types.
-    */
 
     function handleTermChange({ target }) {
         setTerm(target.value);
     }
 
+    function handleKeyDown(event) {
+        if (event.key === "Enter") {
+            submitSearch();
+        }
+    }
+
     return (
-        <div>
+        <div className={styles.SearchBar}>
             <input
+                className={styles.SearchInput}
                 placeholder="Enter A Song, Album, or Artist"
+                value={term}
                 onChange={handleTermChange}
+                onKeyDown={handleKeyDown}
             />
-            <button onClick={passTerm}>SEARCH</button>
+            <button
+                className={styles.SearchButton}
+                onClick={submitSearch}
+            >
+                SEARCH
+            </button>
         </div>
     );
-
 }
 
 export default SearchBar;

@@ -1,4 +1,32 @@
 .SearchResults {
-    
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  color: #f4f4f4;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
 }
 
+.Title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Mobile layout improvements */
+@media (max-width: 600px) {
+  .SearchResults {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .Title {
+    font-size: 1.4rem;
+  }
+}

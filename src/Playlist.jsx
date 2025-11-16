@@ -1,35 +1,32 @@
 import React from "react";
 import Tracklist from "./Tracklist";
+import styles from "./Playlist.module.css";
 
 function Playlist(props) {
     function handleNameChange({ target }) {
         props.onNameChange(target.value);
     }
+
     return (
-        <div>
-            <input defaultValue={"New Playlist"} onChange={handleNameChange} />
-            {/* <!-- Add a TrackList component --> */}
+        <div className={styles.Playlist}>
+            <input
+                className={styles.PlaylistInput}
+                value={props.playlistName}
+                onChange={handleNameChange}
+            />
             <Tracklist
                 userSearchResults={props.playlistTracks}
                 onRemove={props.onRemove}
                 isRemoval={true}
             />
-            <button onClick={props.onSave} >
+            <button
+                className={styles.PlaylistSave}
+                onClick={props.onSave}
+            >
                 SAVE TO SPOTIFY
             </button>
         </div>
     );
 }
 
-export default Playlist; 
-
-/* 
-Playlist represents the user’s playlist.
-It allows the user to:
-
-rename the playlist
-
-view and remove tracks in the playlist
-
-save the playlist to Spotify
-*/
+export default Playlist;

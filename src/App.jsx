@@ -1,59 +1,27 @@
-import React, { useState } from "react";
-import SearchResults from "./SearchResults"
-import Playlist from "./Playlist"
-import { Spotify } from "./Spotify"
-import SearchBar from "./SearchBar"
+import React, { useState, useEffect } from "react";
+import SearchResults from "./SearchResults";
+import Playlist from "./Playlist";
+import { Spotify } from "./Spotify";
+import SearchBar from "./SearchBar";
+import style from "./app.module.css"
+import "./app.css"
+
 
 function App() {
-  const [searchResults, setSearchResults] = useState([
-    {
-      name: "Example Track Name 1",
-      artist: "Example Track Artist 1",
-      album: "Example Track Album 1",
-      id: 1,
-    },
-    {
-      name: "Example Track Name 2",
-      artist: "Example Track Artist 2",
-      album: "Example Track Album 2",
-      id: 2,
-    },
-  ]);
+  const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("Example Playlist Name");
-  const [playlistTracks, setPlaylistTracks] = useState([
-    {
-      name: "Example Playlist Name 1",
-      artist: "Example Playlist Artist 1",
-      album: "Example Playlist Album 1",
-      id: 11,
-    },
-    {
-      name: "Example Playlist Name 2",
-      artist: "Example Playlist Artist 2",
-      album: "Example Playlist Album 2",
-      id: 22,
-    },
-    {
-      name: "Example Playlist Name 3",
-      artist: "Example Playlist Artist 3",
-      album: "Example Playlist Album 3",
-      id: 33,
-    },
-  ]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   function addTrack(track) {
-    const existingTrack = playlistTracks.find((t) => t.id === track.id);
-    const newTrack = playlistTracks.concat(track);
-    if (existingTrack) {
-      console.log("Track already exists");
-    } else {
-      setPlaylistTracks(newTrack);
+    const exists = playlistTracks.find((t) => t.id === track.id);
+    if (!exists) {
+      setPlaylistTracks([...playlistTracks, track]);
+      setSearchResults(searchResults.filter((t) => t.id !== track.id));
     }
   }
 
   function removeTrack(track) {
-    const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
-    setPlaylistTracks(existingTrack);
+    setPlaylistTracks(playlistTracks.filter((t) => t.id !== track.id));
   }
 
   function updatePlaylistName(name) {
@@ -73,33 +41,31 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>
-        Jammming
-      </h1>
-      <div>
-        {/* <!-- Add a SearchBar component --> */}
+    <div className="App">
+      <h1>Jammming</h1>
+
+      {/* SEARCH BAR SECTION */}
+      <div className="SearchSection">
         <SearchBar onSearch={search} />
+      </div>
 
-        <div >
-          {/* <!-- Add a SearchResults component --> */}
-          <SearchResults userSearchResults={searchResults} onAdd={addTrack} />
-          {/* passing searchResults state to the SearchResults component as userSearchResults */}
+      {/* MAIN RESULTS + PLAYLIST GRID */}
+      <div className="MainContainer">
+        <SearchResults
+          userSearchResults={searchResults}
+          onAdd={addTrack}
+        />
 
-          {/* <!-- Add a Playlist component --> */}
-          <Playlist
-            playlistName={playlistName}
-            playlistTracks={playlistTracks}
-            onRemove={removeTrack}
-            onNameChange={updatePlaylistName}
-            onSave={savePlaylist}
-          />
-          {/* passing playlistName & playlistTracks states to the Playlist component as userSearchResults */}
-        </div>
+        <Playlist
+          playlistName={playlistName}
+          playlistTracks={playlistTracks}
+          onRemove={removeTrack}
+          onNameChange={updatePlaylistName}
+          onSave={savePlaylist}
+        />
       </div>
     </div>
   );
 }
 
 export default App;
-

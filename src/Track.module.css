@@ -1,0 +1,40 @@
+.Track {
+  background: #181818;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.Track:hover {
+  background: #222222;
+  transform: translateY(-2px);
+}
+
+/* Album Art */
+.Track img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.Track-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Track-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.Track-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}

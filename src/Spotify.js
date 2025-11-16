@@ -111,6 +111,7 @@ const Spotify = {
                 }
                 return jsonResponse.tracks.items.map((t) => ({
                     id: t.id,
+                    albumImage: t.album.images[0]?.url,
                     name: t.name,
                     artist: t.artists[0].name,
                     album: t.album.name,
