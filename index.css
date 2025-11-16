@@ -1,0 +1,28 @@
+body, html {
+   background-color: black;
+   color: white   
+}
+
+
+
+
+/* Color Theme Swatches in Hex */
+.PALETTE-mini-07:-Monotone-1-hex { color: #040FD9; }
+.PALETTE-mini-07:-Monotone-2-hex { color: #040DBF; }
+.PALETTE-mini-07:-Monotone-3-hex { color: #021E73; }
+.PALETTE-mini-07:-Monotone-4-hex { color: #0339A6; }
+.PALETTE-mini-07:-Monotone-5-hex { color: #4E8AD9; }
+
+/* Color Theme Swatches in RGBA */
+.PALETTE-mini-07:-Monotone-1-rgba { color: rgba(4, 14, 216, 1); }
+.PALETTE-mini-07:-Monotone-2-rgba { color: rgba(3, 13, 191, 1); }
+.PALETTE-mini-07:-Monotone-3-rgba { color: rgba(2, 30, 114, 1); }
+.PALETTE-mini-07:-Monotone-4-rgba { color: rgba(3, 57, 165, 1); }
+.PALETTE-mini-07:-Monotone-5-rgba { color: rgba(78, 138, 216, 1); }
+
+/* Color Theme Swatches in HSLA */
+.PALETTE-mini-07:-Monotone-1-hsla { color: hsla(236, 96, 43, 1); }
+.PALETTE-mini-07:-Monotone-2-hsla { color: hsla(236, 96, 38, 1); }
+.PALETTE-mini-07:-Monotone-3-hsla { color: hsla(225, 96, 22, 1); }
+.PALETTE-mini-07:-Monotone-4-hsla { color: hsla(219, 96, 33, 1); }
+.PALETTE-mini-07:-Monotone-5-hsla { color: hsla(213, 64, 57, 1); }
