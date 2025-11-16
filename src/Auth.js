@@ -39,7 +39,7 @@ let accessToken = "";
 let expiresAt = 0;
 
 const clientID = "";
-const redirectUrl = "http://[::1]:5173"; // Replace with your deployed URL if needed
+const redirectUrl = "https://andygerlach.github.io/Jammming/"; // Replace with your deployed URL if needed
 0
 // ─────────────────────────────
 // PKCE Helper Functions

@@ -1,7 +1,7 @@
 // test.js code
 let accessToken = "";
 const clientID = "0daed1230ede4c0c910f75e06e18e62e";
-const redirectUrl = "http://[::1]:5173";
+const redirectUrl = "https://andygerlach.github.io/Jammming/";
 
 function generateRandomString(length = 128) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
